@@ -13,6 +13,7 @@
 		A22BA3F92A66AD4000AA86E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A22BA3F82A66AD4000AA86E8 /* Preview Assets.xcassets */; };
 		A22BA4002A672C8400AA86E8 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22BA3FF2A672C8400AA86E8 /* LoginPage.swift */; };
 		A22BA4052A68028900AA86E8 /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22BA4042A68028900AA86E8 /* ResetPassword.swift */; };
+		A2DE5C4D2A6837F0006D3779 /* NewPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE5C4C2A6837F0006D3779 /* NewPassword.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		A22BA3F82A66AD4000AA86E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A22BA3FF2A672C8400AA86E8 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		A22BA4042A68028900AA86E8 /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
+		A2DE5C4C2A6837F0006D3779 /* NewPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPassword.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				A22BA3F32A66AD3F00AA86E8 /* ContentView.swift */,
 				A22BA3FF2A672C8400AA86E8 /* LoginPage.swift */,
 				A22BA4042A68028900AA86E8 /* ResetPassword.swift */,
+				A2DE5C4C2A6837F0006D3779 /* NewPassword.swift */,
 				A22BA3F52A66AD4000AA86E8 /* Assets.xcassets */,
 				A22BA3F72A66AD4000AA86E8 /* Preview Content */,
 			);
@@ -145,6 +148,7 @@
 			files = (
 				A22BA4052A68028900AA86E8 /* ResetPassword.swift in Sources */,
 				A22BA3F42A66AD3F00AA86E8 /* ContentView.swift in Sources */,
+				A2DE5C4D2A6837F0006D3779 /* NewPassword.swift in Sources */,
 				A22BA4002A672C8400AA86E8 /* LoginPage.swift in Sources */,
 				A22BA3F22A66AD3F00AA86E8 /* PointoApp.swift in Sources */,
 			);
