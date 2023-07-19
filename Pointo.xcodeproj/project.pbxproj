@@ -12,7 +12,7 @@
 		A22BA3F62A66AD4000AA86E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A22BA3F52A66AD4000AA86E8 /* Assets.xcassets */; };
 		A22BA3F92A66AD4000AA86E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A22BA3F82A66AD4000AA86E8 /* Preview Assets.xcassets */; };
 		A22BA4002A672C8400AA86E8 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22BA3FF2A672C8400AA86E8 /* LoginPage.swift */; };
-		A22BA4032A672D1200AA86E8 /* LoginPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22BA4022A672D1200AA86E8 /* LoginPageModel.swift */; };
+		A22BA4052A68028900AA86E8 /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22BA4042A68028900AA86E8 /* ResetPassword.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +22,7 @@
 		A22BA3F52A66AD4000AA86E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A22BA3F82A66AD4000AA86E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A22BA3FF2A672C8400AA86E8 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
-		A22BA4022A672D1200AA86E8 /* LoginPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageModel.swift; sourceTree = "<group>"; };
+		A22BA4042A68028900AA86E8 /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +55,10 @@
 		A22BA3F02A66AD3F00AA86E8 /* Pointo */ = {
 			isa = PBXGroup;
 			children = (
-				A22BA4012A672CF500AA86E8 /* ViewModel */,
 				A22BA3F12A66AD3F00AA86E8 /* PointoApp.swift */,
 				A22BA3F32A66AD3F00AA86E8 /* ContentView.swift */,
 				A22BA3FF2A672C8400AA86E8 /* LoginPage.swift */,
+				A22BA4042A68028900AA86E8 /* ResetPassword.swift */,
 				A22BA3F52A66AD4000AA86E8 /* Assets.xcassets */,
 				A22BA3F72A66AD4000AA86E8 /* Preview Content */,
 			);
@@ -71,14 +71,6 @@
 				A22BA3F82A66AD4000AA86E8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		A22BA4012A672CF500AA86E8 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				A22BA4022A672D1200AA86E8 /* LoginPageModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,9 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A22BA4052A68028900AA86E8 /* ResetPassword.swift in Sources */,
 				A22BA3F42A66AD3F00AA86E8 /* ContentView.swift in Sources */,
 				A22BA4002A672C8400AA86E8 /* LoginPage.swift in Sources */,
-				A22BA4032A672D1200AA86E8 /* LoginPageModel.swift in Sources */,
 				A22BA3F22A66AD3F00AA86E8 /* PointoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
