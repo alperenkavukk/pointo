@@ -13,9 +13,14 @@ struct LoginPage: View {
         @State private var password = ""
         
         var body: some View {
+           
+            
             VStack {
-                Image("background1").resizable().frame(maxWidth: .infinity,maxHeight: .infinity)
-                
+                Image("background1")
+                    .resizable()
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(maxWidth: .infinity ,maxHeight: .infinity)
+                    .position(x:Double(196.6),y:110)
                 Image("pointo").position(x:200,y: -50)
                 
                 VStack {
