@@ -13,70 +13,67 @@ struct LoginPage: View {
     @State private var password = ""
     @State private var showContentPage = false
     var body: some View {
-      
         NavigationView{
-            
-            VStack {
-                Image("background1")
+           
+            ZStack{
+                
+           
+            VStack{
+                /*Image("background1")
                     .resizable()
                     .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
+                    .edgesIgnoringSafeArea(.leading)
                     .frame(maxWidth: .infinity ,maxHeight: 50)
-                    .position(x:Double(196.6),y:-205)
+                    .position(x:Double(196.6),y:-265)*/
+                
+                 Image("exxestock")
+                     .resizable()
+                     .aspectRatio( contentMode: .fill)
+                     .position(x:Double(196.6),y:20)
                 
                 Image("pointo")
-                    .position(x:200,y:0)
+                    .position(x:200,y: -160)
                 
-                VStack {
-                    Text("Hesabınıza giriş yapın")
-                        .fontWeight(.bold)
-                        .position(x:-40,y:50)
-                        .frame(maxWidth: 130,maxHeight: 58)
-                        .font(.custom("Plus Jakarta Sans", size: 25))
-                        
-                    
-                }
                 VStack{
-                    Text("E Posta adresi")
-                        .font(.custom("bold", size: 10))
-                        .keyboardType(.emailAddress)
-                        .position(x:45,y: 30)
+                    Text("Hesabınıza giriş yapınız")
+                        .fontWeight(.bold)
+                        .position(x:100,y:-160)
+                        .frame(maxWidth: 300,maxHeight: 200)
+                        .font(.custom("Plus Jakarta Sans", size: 25))
+                    
+                    Text("E posta")
+                        .fontWeight(.bold)
+                        .font(.custom("Plus Jakarta Sans", size: 10))
+                        .foregroundColor(Color.gray)
+                        .position(x:32,y:-150)
                     
                     TextField("E posta adresiniz", text: $username)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .frame(maxWidth: 335,maxHeight: 80)
-                        .position(x:160,y:35)
-                        .padding()
+                        .frame(maxWidth: 350,maxHeight: 80)
+                        .position(x:190,y:-158)
                     
-                    Text("Şifre")
-                        .font(.custom("bold", size: 10))
-                        .position(x:23,y:51)
+                    Text("Şifre ")
+                        .fontWeight(.bold)
+                        .font(.custom("Plus Jakarta Sans", size: 10))
+                        .foregroundColor(Color.gray)
+                        .position(x:27,y:-150)
                     
-                    SecureField("Şifreniz", text: $password)
+                    TextField("Şifreniz", text: $password)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .frame(maxWidth: 335,maxHeight: 80)
-                        .position(x:160,y:57)
-                        .padding()
+                        .frame(maxWidth: 350,maxHeight: 80)
+                        .position(x:190,y:-160)
                     
+                    Button {
+                        
+                    } label: {
+                        Text("Şifremi unuttum?")
+                            .font(.subheadline)
+                            .foregroundColor(.black)
+                    }.position(x:186,y:-145)
+
                     
                     Button(action: {
                         
-                    }) {
-                        Text("Şifremi Unuttum?")
-                            .font(.subheadline)
-                            .foregroundColor(.black)
-                            .frame(maxWidth: 129,maxHeight: 24)
-                            
-                            .padding()
-                    }.position(x:180,y:100)
-                    
-                    NavigationLink(destination: ContentView(), isActive: $showContentPage) {
-                        EmptyView()
-                    }
-                    
-                    
-                    Button(action: {
-                        showContentPage = true
                     }) {
                         Text("Giriş Yap")
                             .font(.headline)
@@ -86,17 +83,16 @@ struct LoginPage: View {
                             .padding()
                             .background(Color(hex: "#142239"))
                             .cornerRadius(10)
-                            
-                    }.position(x:180,y:155)
+                        
+                    }
+                    .position(x:194,y:-130)
+                    
                 }
-                
+                .position(x:200,y: 5)
+            }
                 
                
-             
-                .padding()
-                
-                HStack {
-                    
+                HStack{
                     Rectangle()
                         .frame(width: 120, height: 1)
                         .foregroundColor(.gray)
@@ -113,36 +109,41 @@ struct LoginPage: View {
                         .foregroundColor(.gray)
                         .position(x:40,y: 45)
                     
-                }
-                .position(x:200,y:205)
+                }.position(x:200,y:870)
                 
-                
-                Text("Hesabınız yok mu?")
-                    .font(.subheadline)
-                    .foregroundColor(.black)
-                    .position(x:135,y:107)
-                
-                
-                Button(action: {
-                    
-                    //iletişim
-                }) {
-                    Text(" IT ile iletişime geç")
+                HStack{
+                    Text("Hesabınız yok mu?")
                         .font(.subheadline)
-                        .foregroundColor(.red)
-                        .frame(maxWidth: 280, maxHeight: 24)
+                        .foregroundColor(.black)
+                        .position(x:164,y:-14)
+                    
+                    NavigationLink(destination: LoginPage(), isActive: $showContentPage) {
+                        EmptyView()
+                    }
+                    
+                    
+                    Button(action: {
                         
-                        .padding()
-                }.position(x:262,y: -25)
-                .padding(.bottom, 20)
-                
+                       showContentPage = true
+                        
+                    }) {
+                        Text("IT ile iletişime geç")
+                            .font(.subheadline)
+                            .foregroundColor(.red)
+                            .frame(maxWidth: 280, maxHeight: 24)
+                            
+                           
+                    }.position(x:93,y:-14)
+                       
+                }.position(x:170,y:960)
+                    
             }
-            .background(Color.white)
-            .edgesIgnoringSafeArea(.all)
             
         }
     }
 }
+    
+
 
 
 struct LoginPage_Previews: PreviewProvider {

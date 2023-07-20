@@ -13,36 +13,43 @@ struct ResetPassword: View {
     @State private var showLoginPage = false
     var body: some View {
         NavigationView{
+            ZStack{
+                
             VStack{
-                Image("background1")
+                /*Image("background1")
                     .resizable()
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.leading)
                     .frame(maxWidth: .infinity ,maxHeight: 50)
-                    .position(x:Double(196.6),y:-255)
-                
+                    .position(x:Double(196.6),y:-265)*/
+               
+                Image("exxestock")
+                    .resizable()
+                    .aspectRatio( contentMode: .fill)
+                    .position(x:Double(196.6),y:20)
+                    
                 
                 Image("pointo")
-                    .position(x:200,y: -50)
+                    .position(x:200,y: -160)
                 
-                    
+                
                 VStack{
                     Text("Şifrenizi sıfırlayın")
                         .fontWeight(.bold)
                         .font(.custom("Plus Jakarta Sans", size: 25))
                         .frame(maxWidth: 200,maxHeight: 10)
-                        .position(x:110,y:-125)
+                        .position(x:110,y:-135)
                     
                     Text("E posta adresi")
                         .fontWeight(.bold)
                         .font(.custom("Plus Jakarta Sans", size: 10))
                         .foregroundColor(Color.gray)
-                        .position(x:50,y:-125)
+                        .position(x:50,y:-145)
                     
                     TextField("E posta adresiniz", text: $username)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 335,maxHeight: 80)
-                        .position(x:185,y:-133)
+                        .position(x:185,y:-180)
                     Button(action: {
                         
                     }) {
@@ -54,13 +61,11 @@ struct ResetPassword: View {
                             .padding()
                             .background(Color(hex: "#142239"))
                             .cornerRadius(10)
-                            
                     }
-                    .position(x:194,y:-100)
+                    .position(x:194,y:-170)
                     
-                    
-                }.position(x:200,y: 160)
-               
+                }.position(x:200,y: -30)
+            }
                 HStack{
                     Rectangle()
                         .frame(width: 120, height: 1)
@@ -78,13 +83,13 @@ struct ResetPassword: View {
                         .foregroundColor(.gray)
                         .position(x:40,y: 45)
                     
-                }.position(x:200,y:30)
+                }.position(x:200,y:790)
                 
                 HStack{
                     Text("Hesabınız yok mu?")
                         .font(.subheadline)
                         .foregroundColor(.black)
-                        .position(x:133,y:-84)
+                        .position(x:133,y:984)
                     
                     NavigationLink(destination: LoginPage(), isActive: $showLoginPage) {
                         EmptyView()
@@ -102,9 +107,9 @@ struct ResetPassword: View {
                             .frame(maxWidth: 280, maxHeight: 24)
                             
                            
-                    }.position(x:61,y:-84)
+                    }.position(x:61,y:984)
                    
-                }.position(x:190,y:40)
+                }.position(x:190,y:-110)
             }
            
         }
