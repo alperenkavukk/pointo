@@ -11,57 +11,93 @@ struct LoginPage: View {
     
     @State private var username = ""
     @State private var password = ""
-    @State private var showContentPage = false
+    @State private var showResetPage = false
+    @State private var showPassword = false
+    
+
     var body: some View {
-        NavigationView{
+       
            
             ZStack{
                 
-           
+                Color.white
+                    
+                    
             VStack{
-                /*Image("background1")
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.leading)
-                    .frame(maxWidth: .infinity ,maxHeight: 50)
-                    .position(x:Double(196.6),y:-265)*/
                 
                  Image("exxestock")
                      .resizable()
                      .aspectRatio( contentMode: .fill)
-                     .position(x:Double(196.6),y:20)
-                
+                     .position(x:Double(196.6),y:0)
+                     .offset(y: 20)
+                     .frame(maxWidth: 625,maxHeight: 324)
                 Image("pointo")
-                    .position(x:200,y: -160)
+                    .frame(maxWidth: 176,maxHeight: 60)
+                    .position(x:200,y: -174)
                 
                 VStack{
-                    Text("Hesabınıza giriş yapınız")
-                        .fontWeight(.bold)
-                        .position(x:100,y:-160)
-                        .frame(maxWidth: 300,maxHeight: 200)
-                        .font(.custom("Plus Jakarta Sans", size: 25))
+                    Image("white")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 410, height: 650)
+                        .clipShape(RoundedRectangle(cornerRadius:30))
+                        .position(x:193,y:90)
                     
-                    Text("E posta")
+                    
+                    
+                    GeometryReader { geometry in
+                        Text("Hesabınıza giriş yapın")
+                            .font(.custom("Plus Jakarta Sans", size: 32))
+                            .fontWeight(.bold)
+                            .frame(width: 184, height: 104)
+                    } 
+                    .position(x: 210, y: -220)
+                    Spacer()
+                    
+                    Text("E posta adresi")
                         .fontWeight(.bold)
-                        .font(.custom("Plus Jakarta Sans", size: 10))
+                        .font(.custom("Plus Jakarta Sans", size: 8))
                         .foregroundColor(Color.gray)
-                        .position(x:32,y:-150)
+                        .position(x:49,y:-140)
+                        .offset(x: 0, y: 0)
                     
                     TextField("E posta adresiniz", text: $username)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .frame(maxWidth: 350,maxHeight: 80)
-                        .position(x:190,y:-158)
+                        .frame(maxWidth: 335,maxHeight: 80)
+                        .position(x:190,y:-140)
+                        .offset(x: 0, y: 0)
+                    
                     
                     Text("Şifre ")
                         .fontWeight(.bold)
-                        .font(.custom("Plus Jakarta Sans", size: 10))
+                        .font(.custom("Plus Jakarta Sans", size: 8))
                         .foregroundColor(Color.gray)
-                        .position(x:27,y:-150)
+                        .position(x:34,y:-130)
+                        .offset(x: 0, y: 0)
                     
-                    TextField("Şifreniz", text: $password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .frame(maxWidth: 350,maxHeight: 80)
-                        .position(x:190,y:-160)
+                    Group{
+                        if showPassword{
+                            SecureField("Şifreniz", text: $password)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .frame(maxWidth: 335,maxHeight: 80)
+                                .position(x:196,y:-130)
+                                .offset(x: 0, y: 0)
+                        }else{
+                            TextField("Şifreniz", text: $password)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .frame(maxWidth: 335,maxHeight: 80)
+                                .position(x:190,y:-130)
+                                .offset(x: 0, y: 0)
+                        }
+                    }
+                    
+                    Button(action: {
+                        showPassword.toggle()
+                    }) {
+                        Image(systemName: showPassword ? "eye.slash.fill" : "eye.fill")
+                            .foregroundColor(.gray)
+                            
+                    }.position(x:337,y:-157)
                     
                     Button {
                         
@@ -69,29 +105,31 @@ struct LoginPage: View {
                         Text("Şifremi unuttum?")
                             .font(.subheadline)
                             .foregroundColor(.black)
-                    }.position(x:186,y:-145)
-
+                            .frame(maxWidth: 129,maxHeight: 24)
+                    }.position(x:194,y:-133)
+                      
                     
                     Button(action: {
                         
                     }) {
                         Text("Giriş Yap")
-                            .font(.headline)
-                            .fontWeight(.bold)
-                            .frame(maxWidth: 335,maxHeight: 26)
+                            .font(.custom("Plus Jakarta Sans", size: 16))                            .frame(maxWidth: 303,maxHeight: 56)
                             .foregroundColor(.white)
                             .padding()
                             .background(Color(hex: "#142239"))
                             .cornerRadius(10)
                         
                     }
-                    .position(x:194,y:-130)
+                    .position(x:194,y:-100)
                     
-                }
-                .position(x:200,y: 5)
-            }
+                }//vsStack
                 
+
+                .position(x:200,y:5)
+            }
+            
                
+                
                 HStack{
                     Rectangle()
                         .frame(width: 120, height: 1)
@@ -109,22 +147,24 @@ struct LoginPage: View {
                         .foregroundColor(.gray)
                         .position(x:40,y: 45)
                     
-                }.position(x:200,y:870)
+                }.position(x:200,y:860)
+                    
+              
                 
                 HStack{
                     Text("Hesabınız yok mu?")
                         .font(.subheadline)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color(hex: "#7C7D82"))
                         .position(x:164,y:-14)
                     
-                    NavigationLink(destination: LoginPage(), isActive: $showContentPage) {
+                    NavigationLink(destination: ResetPassword(), isActive: $showResetPage) {
                         EmptyView()
-                    }
+                    }.hidden()
                     
                     
                     Button(action: {
                         
-                       showContentPage = true
+                       showResetPage = true
                         
                     }) {
                         Text("IT ile iletişime geç")
@@ -135,13 +175,13 @@ struct LoginPage: View {
                            
                     }.position(x:93,y:-14)
                        
-                }.position(x:170,y:960)
+                }.position(x:168,y:960)
                     
             }
             
         }
     }
-}
+
     
 
 
