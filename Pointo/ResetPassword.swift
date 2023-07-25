@@ -31,11 +31,11 @@ struct ResetPassword: View {
                     .position(x:200,y: -195)
                 
                 
-                VStack{
+                VStack(spacing: 5){
                     Image("white")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 410, height: 650)
+                        .frame(width: 410, height: 580)
                         .clipShape(RoundedRectangle(cornerRadius:30))
                         .position(x:193,y:90)
                     
@@ -46,20 +46,20 @@ struct ResetPassword: View {
                             .fontWeight(.bold)
                             .frame(width: 184, height: 104)
                     }
-                    .position(x: 190, y: -235)
+                    .position(x: 190, y: -205)
                     
                     Text("E posta adresi")
                         .fontWeight(.bold)
                         .font(.custom("Plus Jakarta Sans", size: 10))
                         .foregroundColor(Color.gray)
-                        .position(x:60,y:-187)
+                        .position(x:60,y:-170)
                         
                         
                     
                     TextField("E posta adresiniz", text: $username)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .frame(maxWidth: 335,maxHeight: 80)
-                        .position(x:193,y:-208)
+                        .position(x:194,y:-190)
                         
                     
                     Button(action: {
@@ -74,7 +74,7 @@ struct ResetPassword: View {
                             .background(Color(hex: "#142239"))
                             .cornerRadius(10)
                     }
-                    .position(x:194,y:-185)
+                    .position(x:194,y:-182)
                     
                 }.position(x:200,y: -30)
                 

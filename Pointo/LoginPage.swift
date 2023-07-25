@@ -33,7 +33,7 @@ struct LoginPage: View {
                      .frame(maxWidth: 625,maxHeight: 324)
                 Image("pointo")
                     .frame(maxWidth: 176,maxHeight: 60)
-                    .position(x:200,y: -174)
+                    .position(x:200,y: -195)
                 
                 VStack{
                     Image("white")
@@ -80,7 +80,7 @@ struct LoginPage: View {
                             SecureField("Şifreniz", text: $password)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .frame(maxWidth: 335,maxHeight: 80)
-                                .position(x:196,y:-130)
+                                .position(x:190,y:-130)
                                 .offset(x: 0, y: 0)
                         }else{
                             TextField("Şifreniz", text: $password)
@@ -94,7 +94,7 @@ struct LoginPage: View {
                     Button(action: {
                         showPassword.toggle()
                     }) {
-                        Image(systemName: showPassword ? "eye.slash.fill" : "eye.fill")
+                        Image(systemName: showPassword ? "eye.slash.fill" : "eye")
                             .foregroundColor(.gray)
                             
                     }.position(x:337,y:-157)
